@@ -46,7 +46,7 @@ bool MLSMapKalmanExporter::configureHook()
             pcl::PointXYZ mi, ma; 
             pcl::getMinMax3D (*cloud, mi, ma); 
             
-            double mls_res = 0.2;
+            double mls_res = _mls_resolution.get();
             double size_x = std::max(ma.x, -std::min<float>(mi.x, 0.0)) * 2.0;
             double size_y = std::max(ma.y, -std::min<float>(mi.y, 0.0)) * 2.0;
             
