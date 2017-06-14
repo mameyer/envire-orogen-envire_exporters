@@ -1,0 +1,10 @@
+name "envire_exporters"
+import_types_from "envire_maps"
+
+task_context "MLSMapKalmanExporter" do
+    property "path", "std::string"
+    output_port "map", spatio_temporal('/maps/grid/MLSMapKalman')
+    
+    operation("writeMap")
+end
+
