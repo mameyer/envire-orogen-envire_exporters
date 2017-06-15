@@ -10,3 +10,11 @@ task_context "MLSMapKalmanExporter" do
     operation("writeMap")
 end
 
+task_context "MLSMapPrecalculatedExporter" do
+    property "path", "std::string"
+    property "mls_resolution", "double", 0.1
+    
+    output_port 'map', spatio_temporal('/maps/grid/MLSMapPrecalculated')
+    
+    operation("writeMap")
+end
