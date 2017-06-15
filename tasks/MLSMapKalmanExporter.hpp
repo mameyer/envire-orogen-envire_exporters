@@ -27,6 +27,8 @@ namespace envire_exporters{
     protected:
         bool written;
         maps::grid::MLSMapKalman map;
+        
+        
         /* Handler for the writeMap operation
          */
         virtual void writeMap();

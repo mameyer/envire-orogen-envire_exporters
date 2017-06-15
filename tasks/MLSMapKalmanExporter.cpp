@@ -80,13 +80,12 @@ bool MLSMapKalmanExporter::startHook()
 }
 void MLSMapKalmanExporter::updateHook()
 {
-    envire::core::SpatioTemporal<maps::grid::MLSMapKalman> mapFoo(map);
-    mapFoo.setFrameID("Map");
-    mapFoo.setTime(base::Time::now());
+    
+    
     
     if(!written)
     {
-        _map.write(mapFoo);
+        writeMap();
         written = true;
     }
     MLSMapKalmanExporterBase::updateHook();
