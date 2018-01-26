@@ -7,3 +7,5 @@ INCLUDE(envire_exportersBase)
 # FIND_PACKAGE(KDL)
 # FIND_PACKAGE(OCL)
 
+
+add_subdirectory(init)
