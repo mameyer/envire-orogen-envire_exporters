@@ -59,6 +59,15 @@ bool MLSMapKalmanExporter::configureHook()
             map.mergePointCloud(*cloud, tf);
         }
     }
+    else if (path.find(".bin") != std::string::npos)
+    {
+        std::ifstream mlsStream(path);
+        if (mlsStream.is_open())
+        {
+            boost::archive::binary_iarchive mlsIn(mlsStream);
+            mlsIn >> map;
+        }
+    }
     else
     {
         std::cout << "Error, only ply loading supported atm" << std::endl;
